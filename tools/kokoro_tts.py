@@ -12,5 +12,5 @@ if '*' in voice:
 else:
     style = voice
 lang = 'en-gb' if voice.startswith('b') else 'en-us'
-samples, rate = k.create(open(text_file, encoding='utf-8').read(), voice=style, speed=0.95, lang=lang)  # matches the ~3.3 syllables/sec of the reference videos
+samples, rate = k.create(open(text_file, encoding='utf-8').read(), voice=style, speed=0.9, lang=lang)  # matches the ~3.3 syllables/sec of the reference videos
 sf.write(out, samples, rate)

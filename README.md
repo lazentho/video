@@ -1,11 +1,19 @@
 # Mystery Video Maker
 
-Type a topic (or leave it empty) and get a short vertical video about things humans haven't figured out yet, like the Wow! signal.
+Makes short "things humans still don't know" videos: script, pictures, voice, captions and music, all free.
 
-## Start it
-1. Install [Node.js](https://nodejs.org), [Python](https://www.python.org/downloads/) and ffmpeg (Windows: `winget install --id Gyan.FFmpeg --exact`, Mac: `brew install ffmpeg`).
-2. Double-click the start file: `start.bat` (Windows), `start.command` (Mac) or `start.sh` (Linux).
-3. Your browser opens the app. If anything is missing, the Setup box tells you what to do.
+## How to use (the easy way)
+1. On GitHub press **Code > Download ZIP**, then unzip it somewhere (for example your Documents).
+2. Open the folder and double-click:
+   - **Windows:** `start.bat`
+   - **Mac:** `start.command` (the first time: right-click > Open)
+3. The first time it installs what it needs (Node.js, ffmpeg, Python, the voices). On Windows it may ask you to close and double-click again once.
+4. Your browser opens the app. Pick an idea, press **Use**, then **Make video**.
+5. Next time, just double-click **Mystery Video Maker** on your desktop (Windows) or `start.command` again.
+
+Videos are saved in the `output` folder, and you can download them from the app.
+
+**Music:** put your own songs (mp3) in the `music` folder and pick one in the app. Use "Start the song at" to skip the intro.
 
 ## Ideas
 - `library/ideas.json`: ideas with full scripts written by Claude. These make videos with no AI key at all.

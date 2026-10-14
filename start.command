@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 # Double-click (or run ./start.sh) to start Mystery Video Maker.
 cd "$(dirname "$0")"
-missing=0
-for tool in node ffmpeg python3; do
-  if ! command -v "$tool" >/dev/null 2>&1; then echo "Missing: $tool"; missing=1; fi
-done
-if [ "$missing" = 1 ]; then
-  echo
-  echo "Install the missing tools first:"
-  echo "  Mac:   install Homebrew (https://brew.sh), then: brew install node ffmpeg python"
-  echo "  Linux: sudo apt install nodejs ffmpeg python3 python3-pip"
-  read -r -p "Press Enter to close." _
-  exit 1
+# Install what's missing (Mac: Homebrew, Linux: apt)
+need=""
+for tool in node ffmpeg python3; do command -v "$tool" >/dev/null 2>&1 || need="$need $tool"; done
+if [ -n "$need" ]; then
+  if command -v brew >/dev/null 2>&1; then
+    echo "Installing:$need"
+    brew install $(echo "$need" | sed 's/python3/python/')
+  elif command -v apt-get >/dev/null 2>&1; then
+    echo "Installing:$need (may ask for your password)"
+    sudo apt-get install -y $(echo "$need" | sed 's/node/nodejs/') python3-pip
+  else
+    echo "Missing:$need"
+    echo "Mac: install Homebrew first (https://brew.sh), then double-click this file again."
+    read -r -p "Press Enter to close." _
+    exit 1
+  fi
 fi
 if ! command -v edge-tts >/dev/null 2>&1; then
   echo "Installing the free voice (edge-tts)..."
