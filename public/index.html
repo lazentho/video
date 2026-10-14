@@ -2,74 +2,158 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mystery Video Maker</title>
 <style>
-body{margin:0;font-family:system-ui,sans-serif;background:#07080f;color:#e8ecff;display:flex;justify-content:center;padding:24px 16px}
-main{width:100%;max-width:520px}
-h1{font-size:1.6rem;margin:0 0 4px}p{color:#9aa3c7;margin:0 0 18px}
-input,select,button{width:100%;box-sizing:border-box;font-size:1rem;padding:14px;border-radius:10px;border:1px solid #2a3060}
-input,select{margin-bottom:0;background:#10132a;color:inherit}select{margin-top:10px}button{margin-top:10px;background:#5b6cff;border:0;color:#fff;font-weight:600;cursor:pointer}
-button:disabled{opacity:.5}#bar{height:6px;background:#10132a;border-radius:3px;margin-top:18px;overflow:hidden}
-#fill{height:100%;width:0;background:#5b6cff;transition:width .4s}#msg{margin-top:8px;color:#9aa3c7;min-height:1.2em}
-#setup{background:#10132a;border:1px solid #2a3060;border-radius:12px;padding:16px;margin-bottom:18px}
-#setup h2{font-size:1.1rem;margin:0 0 10px}.step{margin:12px 0}.step b{display:block;margin-bottom:4px}
-.ok{color:#7cff6b}.miss{color:#ffb84d}code{background:#07080f;padding:2px 6px;border-radius:6px}
-.link{background:none;border:0;color:#8d99ff;padding:0;width:auto;margin:0 0 14px;text-decoration:underline;cursor:pointer;font-weight:400}
-details{margin-top:12px;color:#9aa3c7}details input{margin-top:6px}
-video{width:100%;margin-top:16px;border-radius:12px;background:#000}a{color:#8d99ff}
+:root{--bg:#07080f;--card:#10132a;--line:#2a3060;--text:#e8ecff;--muted:#a7b0d6;--accent:#5b6cff;--ok:#7cff6b;--warn:#ffb84d}
+body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);display:flex;justify-content:center;padding:24px 16px;font-size:17px;line-height:1.45}
+main{width:100%;max-width:560px}
+h1{font-size:1.7rem;margin:0 0 4px}h2{font-size:1.15rem;margin:0 0 10px}p{color:var(--muted);margin:0 0 14px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+label{display:block;font-weight:600;margin:10px 0 4px}
+input,select,button{width:100%;box-sizing:border-box;font-size:1rem;padding:13px;border-radius:10px;border:1px solid var(--line);font-family:inherit}
+input,select{background:var(--bg);color:inherit}
+button{margin-top:10px;background:var(--accent);border:0;color:#fff;font-weight:600;cursor:pointer}
+button.ghost{background:none;border:1px solid var(--line);color:var(--text)}
+button:disabled{opacity:.5;cursor:wait}
+:focus-visible{outline:3px solid #ffe14d;outline-offset:2px}
+.row{display:flex;gap:8px}.row>*{flex:1}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.top button{width:auto;margin:0;padding:8px 14px}
+.step{margin:12px 0}.step b{display:block}.ok{color:var(--ok)}.warn{color:var(--warn)}
+code{background:var(--bg);padding:2px 6px;border-radius:6px}a{color:#9aa6ff}
+details{margin-top:12px;color:var(--muted)}details input{margin-top:6px}
+ul{list-style:none;padding:0;margin:12px 0 0}
+li{border-top:1px solid var(--line);padding:12px 0;display:flex;gap:10px;align-items:flex-start}
+li .txt{flex:1}li .hook{color:var(--muted);font-size:.93rem}
+li .tag{font-size:.75rem;padding:2px 8px;border-radius:99px;background:var(--bg);color:var(--muted);margin-left:6px;white-space:nowrap}
+li .tag.made{color:var(--ok)}
+li button{width:auto;margin:0;padding:9px 14px}
+#bar{height:8px;background:var(--bg);border-radius:4px;margin-top:14px;overflow:hidden}
+#fill{height:100%;width:0;background:var(--accent);transition:width .4s}#msg{margin-top:8px;color:var(--muted);min-height:1.4em}
+video{width:100%;margin-top:12px;border-radius:12px;background:#000}
+.empty{color:var(--muted);padding:12px 0 0}
 </style></head><body><main>
-<h1>Mystery Video Maker</h1>
-<p>Type a mystery or leave it empty for a surprise. Get a short AI video.</p>
-<button class="link" id="openSetup">Setup</button>
-<div id="setup" hidden>
-  <h2>Setup</h2>
+<div class="top"><h1>Mystery Video Maker</h1><button class="ghost" id="openSetup" aria-expanded="false" aria-controls="setup">Setup</button></div>
+<p>Get ideas, pick one, get a video. Everything runs on your computer with free AI.</p>
+
+<section id="setup" hidden aria-labelledby="setupTitle">
+  <h2 id="setupTitle">Setup</h2>
   <div class="step"><b>1. Script AI <span id="stScript"></span></b>
-    Get a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (sign in with Google, click Create API key) and paste it here:
+    Get a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (sign in with Google, click "Create API key"), then paste it here.
+    <label for="GEMINI_API_KEY">Gemini key</label>
     <input id="GEMINI_API_KEY" type="password" placeholder="Paste your free Gemini key" autocomplete="off"></div>
   <div class="step"><b>2. Voice <span id="stVoice"></span></b>
-    <span id="voiceHelp">Open a terminal and run <code>pip install edge-tts</code>, then restart the app.</span></div>
+    <span id="voiceHelp">Close the app and start it again with the start file. It installs the free voice for you.</span></div>
   <div class="step"><b>3. Images <span id="stImages"></span></b>Free, nothing to do.</div>
   <details><summary>Paid upgrades (optional)</summary>
-    <input id="ANTHROPIC_API_KEY" type="password" placeholder="Anthropic key (better scripts)" autocomplete="off">
-    <input id="OPENAI_API_KEY" type="password" placeholder="OpenAI key (better images and voice)" autocomplete="off">
+    <label for="ANTHROPIC_API_KEY">Anthropic key (better scripts)</label><input id="ANTHROPIC_API_KEY" type="password" autocomplete="off">
+    <label for="OPENAI_API_KEY">OpenAI key (better images and voice)</label><input id="OPENAI_API_KEY" type="password" autocomplete="off">
   </details>
   <button id="save">Save</button>
-</div>
-<input id="topic" placeholder="e.g. The Wow! signal from space">
-<select id="aspect"><option value="landscape">Wide (16:9)</option><option value="vertical">Tall (9:16)</option></select>
-<button id="go">Make video</button>
-<div id="bar"><div id="fill"></div></div><div id="msg"></div><div id="out"></div>
+</section>
+
+<section aria-labelledby="ideasTitle">
+  <h2 id="ideasTitle">1. Ideas</h2>
+  <label for="theme">Theme (optional)</label>
+  <input id="theme" placeholder="e.g. space signals, ancient history, the ocean">
+  <button id="genIdeas">Give me 10 ideas</button>
+  <label for="ownIdea">Or add your own idea</label>
+  <div class="row"><input id="ownIdea" placeholder="e.g. The Bloop sound in the ocean"><button id="addIdea" class="ghost" style="flex:0 0 auto;width:auto;margin:0">Add</button></div>
+  <ul id="ideas" aria-live="polite"></ul>
+  <p style="margin:10px 0 0;font-size:.85rem">Ideas are saved in <code>ideas.json</code> in the app folder.</p>
+</section>
+
+<section aria-labelledby="makeTitle">
+  <h2 id="makeTitle">2. Make a video</h2>
+  <label for="topic">Topic</label>
+  <input id="topic" placeholder="Pick an idea above, or type any mystery">
+  <label for="aspect">Shape</label>
+  <select id="aspect"><option value="landscape">Wide (16:9)</option><option value="vertical">Tall (9:16, TikTok full screen)</option></select>
+  <label for="voice">Voice</label>
+  <select id="voice">
+    <option value="en-US-AndrewMultilingualNeural">Andrew: warm, natural (recommended)</option>
+    <option value="en-US-BrianMultilingualNeural">Brian: casual, friendly</option>
+    <option value="en-US-ChristopherNeural">Christopher: deep narrator</option>
+    <option value="en-GB-RyanNeural">Ryan: British</option>
+    <option value="en-US-AvaMultilingualNeural">Ava: warm, natural</option>
+    <option value="en-US-EmmaMultilingualNeural">Emma: bright, clear</option>
+  </select>
+  <button id="go">Make video</button>
+  <div id="bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="fill"></div></div>
+  <div id="msg" aria-live="polite"></div><div id="out"></div>
+</section>
+
 <script>
 const $=id=>document.getElementById(id);
+const api=async(url,body,method)=>{
+  const r=await fetch(url,body||method?{method:method||'POST',body:JSON.stringify(body||{})}:undefined);
+  const j=await r.json(); if(!r.ok) throw new Error(j.error||r.statusText); return j;
+};
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// ---- Setup ----
 const KEYS=['GEMINI_API_KEY','ANTHROPIC_API_KEY','OPENAI_API_KEY'];
-function show(st){
-  const mark=(el,v,miss)=>{$(el).textContent=v?'✓ '+v:miss;$(el).className=v?'ok':'miss'};
-  mark('stScript',st.script,'(needed for your own topics)');
+function showStatus(st){
+  const mark=(el,v,miss)=>{$(el).textContent=v?'✓ '+v:miss;$(el).className=v?'ok':'warn'};
+  mark('stScript',st.script,'(needed for AI ideas and scripts)');
   mark('stVoice',st.voice,'(not installed)');
   mark('stImages',st.images,'');
   $('voiceHelp').hidden=!!st.voice;
-  KEYS.forEach(k=>$(k).placeholder=st.keys[k]?'Saved ✓ (paste to replace)':$(k).placeholder);
+  KEYS.forEach(k=>{if(st.keys[k])$(k).placeholder='Saved ✓ (paste a new one to replace)'});
 }
-(async()=>{
-  const st=await (await fetch('/api/status')).json();
-  show(st);
-  if(!st.script||!st.voice)$('setup').hidden=false;
-})();
-$('openSetup').onclick=()=>$('setup').hidden=!$('setup').hidden;
+function toggleSetup(open){$('setup').hidden=!open;$('openSetup').setAttribute('aria-expanded',open)}
+$('openSetup').onclick=()=>toggleSetup($('setup').hidden);
 $('save').onclick=async()=>{
   const body={};KEYS.forEach(k=>{if($(k).value.trim())body[k]=$(k).value.trim();$(k).value=''});
-  const st=await (await fetch('/api/settings',{method:'POST',body:JSON.stringify(body)})).json();
-  show(st);if(st.script&&st.voice)$('setup').hidden=true;
+  const st=await api('/api/settings',body);showStatus(st);if(st.script&&st.voice)toggleSetup(false);
 };
+
+// ---- Ideas ----
+let pickedIdea=null;
+function renderIdeas(ideas){
+  const list=$('ideas');
+  if(!ideas.length){list.innerHTML='<li class="empty">No ideas yet. Press "Give me 10 ideas".</li>';return}
+  list.innerHTML=[...ideas].reverse().map(i=>`<li>
+    <div class="txt"><b>${esc(i.title)}</b><span class="tag ${i.status==='made'?'made':''}">${i.status==='made'?'✓ made':i.status==='making'?'making…':i.source==='claude'?'full script ready':i.source==='ai'?'AI idea':i.source==='starter'?'starter':'your idea'}</span>
+      <div class="hook">${esc(i.hook)}</div>${i.video?`<a href="${esc(i.video)}" target="_blank">Watch</a>`:''}</div>
+    <button data-use="${i.id}" aria-label="Use idea: ${esc(i.title)}">Use</button>
+    <button class="ghost" data-del="${i.id}" aria-label="Delete idea: ${esc(i.title)}">✕</button></li>`).join('');
+  list.querySelectorAll('[data-use]').forEach(b=>b.onclick=()=>{
+    const i=ideas.find(x=>x.id===b.dataset.use);pickedIdea=i.id;$('topic').value=i.title;$('topic').focus();
+    $('makeTitle').scrollIntoView({behavior:'smooth'});
+  });
+  list.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>renderIdeas(await api('/api/ideas/'+b.dataset.del,null,'DELETE')));
+}
+$('genIdeas').onclick=async()=>{
+  const b=$('genIdeas');b.disabled=true;b.textContent='Thinking of ideas…';
+  try{renderIdeas(await api('/api/ideas/generate',{count:10,theme:$('theme').value}))}
+  catch(e){alert('Could not get ideas: '+e.message)}
+  b.disabled=false;b.textContent='Give me 10 more ideas';
+};
+const addOwn=async()=>{const t=$('ownIdea').value.trim();if(!t)return;$('ownIdea').value='';renderIdeas(await api('/api/ideas',{title:t}))};
+$('addIdea').onclick=addOwn;$('ownIdea').onkeydown=e=>{if(e.key==='Enter')addOwn()};
+$('topic').oninput=()=>pickedIdea=null;
+
+// ---- Make video ----
 $('go').onclick=async()=>{
   $('go').disabled=true;$('out').innerHTML='';
-  let job=await (await fetch('/api/generate',{method:'POST',body:JSON.stringify({topic:$('topic').value,aspect:$('aspect').value})})).json();
-  while(job.status!=='done'&&job.status!=='error'){
-    $('fill').style.width=(job.progress*100)+'%';$('msg').textContent=job.message;
-    await new Promise(r=>setTimeout(r,1000));
-    job=await (await fetch('/api/jobs/'+job.id)).json();
-  }
-  $('go').disabled=false;
-  if(job.status==='error'){$('msg').textContent='Error: '+job.message;return}
-  $('fill').style.width='100%';$('msg').textContent=job.script.title+(job.script.demo?' (demo mode: add API keys for real AI scripts, images and voice)':'');
-  $('out').innerHTML=`<video src="${job.url}" controls autoplay playsinline></video><p><a href="${job.url}" download>Download MP4</a></p>`;
+  try{
+    let job=await api('/api/generate',{topic:$('topic').value,aspect:$('aspect').value,voice:$('voice').value,ideaId:pickedIdea});
+    renderIdeas(await api('/api/ideas'));
+    while(job.status!=='done'&&job.status!=='error'){
+      $('fill').style.width=(job.progress*100)+'%';$('bar').setAttribute('aria-valuenow',Math.round(job.progress*100));$('msg').textContent=job.message;
+      await new Promise(r=>setTimeout(r,1000));
+      job=await api('/api/jobs/'+job.id);
+    }
+    if(job.status==='error')throw new Error(job.message);
+    $('fill').style.width='100%';
+    $('msg').textContent='Done: '+job.script.title+(job.script.demo?' (demo: add your free Gemini key in Setup for real AI scripts)':'');
+    $('out').innerHTML=`<video src="${job.url}" controls autoplay playsinline></video><p><a href="${job.url}" download>Download MP4</a></p>`;
+  }catch(e){$('msg').textContent='Something went wrong: '+e.message}
+  $('go').disabled=false;pickedIdea=null;renderIdeas(await api('/api/ideas'));
 };
+
+// ---- Start ----
+(async()=>{
+  const st=await api('/api/status');showStatus(st);if(!st.script||!st.voice)toggleSetup(true);
+  renderIdeas(await api('/api/ideas'));
+})();
 </script></main></body></html>

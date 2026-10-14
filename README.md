@@ -2,12 +2,15 @@
 
 Type a topic (or leave it empty) and get a short vertical video about things humans haven't figured out yet, like the Wow! signal.
 
-## Run
-    cp .env.example .env   # optional, add a free Gemini key
-    pip install edge-tts   # free voice
-    npm start              # then open http://localhost:3000
+## Start it
+1. Install [Node.js](https://nodejs.org), [Python](https://www.python.org/downloads/) and ffmpeg (Windows: `winget install --id Gyan.FFmpeg --exact`, Mac: `brew install ffmpeg`).
+2. Double-click the start file: `start.bat` (Windows), `start.command` (Mac) or `start.sh` (Linux).
+3. Your browser opens the app. If anything is missing, the Setup box tells you what to do.
 
-Needs Node 20+, ffmpeg and Python (for edge-tts).
+## Ideas
+- `library/ideas.json`: ideas with full scripts written by Claude. These make videos with no AI key at all.
+- `ideas.json`: your own ideas and AI-generated ones, plus which ones you already made. Edit it by hand if you like.
+- Each video folder in `output/` also gets a `script.json`.
 
 ## Free AI mode (default, no paid keys)
 | Part | Used |

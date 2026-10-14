@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "lib-wow",
+    "title": "The Wow! Signal",
+    "hook": "In 1977 a telescope caught a signal from space so strong an astronomer wrote 'Wow!' next to it, and it never came back.",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "August 1977, Ohio.",
+        "visual": "a giant flat radio telescope field under a purple night sky",
+        "effect": "flash"
+      },
+      {
+        "narration": "A radio telescope called Big Ear",
+        "visual": "a huge rectangular radio telescope reflector in a field at night",
+        "effect": "none"
+      },
+      {
+        "narration": "is listening to the sky.",
+        "visual": "glowing cyan radio waves arriving from the stars",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Then something hits it.",
+        "visual": "a bright cyan spike of energy striking the telescope",
+        "effect": "shake"
+      },
+      {
+        "narration": "A signal, thirty times louder",
+        "visual": "a tall glowing waveform spike towering over flat noise",
+        "effect": "glitch"
+      },
+      {
+        "narration": "than the background of space.",
+        "visual": "a calm starry void with faint static",
+        "effect": "none"
+      },
+      {
+        "narration": "It lasts seventy two seconds.",
+        "visual": "a glowing stopwatch counting in deep space",
+        "effect": "none"
+      },
+      {
+        "narration": "Exactly as long as the telescope",
+        "visual": "the Earth slowly rotating with a beam sweeping the sky",
+        "effect": "none"
+      },
+      {
+        "narration": "could watch one spot in the sky.",
+        "visual": "a narrow beam pointing to one bright patch of stars",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Days later, astronomer Jerry Ehman",
+        "visual": "a man at a desk reading long computer printouts at night",
+        "effect": "none"
+      },
+      {
+        "narration": "reads the printout,",
+        "visual": "a long paper printout full of numbers and letters",
+        "effect": "none"
+      },
+      {
+        "narration": "circles the code in red,",
+        "visual": "a red marker circling a sequence on paper",
+        "effect": "flash"
+      },
+      {
+        "narration": "and writes one word: Wow!",
+        "visual": "a big red handwritten scribble circle on a printout",
+        "effect": "shake"
+      },
+      {
+        "narration": "It came from Sagittarius,",
+        "visual": "the Sagittarius constellation glowing over the Milky Way",
+        "effect": "none"
+      },
+      {
+        "narration": "near a frequency hydrogen gives off,",
+        "visual": "a glowing hydrogen atom with rings of energy",
+        "effect": "pulse"
+      },
+      {
+        "narration": "one scientists thought aliens might use.",
+        "visual": "a lone satellite dish pointed at a glowing galaxy",
+        "effect": "none"
+      },
+      {
+        "narration": "Astronomers looked again.",
+        "visual": "several radio dishes turning toward the same point in the sky",
+        "effect": "none"
+      },
+      {
+        "narration": "And again. For decades.",
+        "visual": "calendar pages flying away into space",
+        "effect": "none"
+      },
+      {
+        "narration": "Nothing. It never repeated.",
+        "visual": "an empty dark void with one fading star",
+        "effect": "glitch"
+      },
+      {
+        "narration": "A newer idea says",
+        "visual": "a scientist's notebook with glowing diagrams",
+        "effect": "none"
+      },
+      {
+        "narration": "a hydrogen cloud may have flared up.",
+        "visual": "a glowing cloud of gas suddenly brightening in space",
+        "effect": "flash"
+      },
+      {
+        "narration": "But nobody has proven it.",
+        "visual": "a big question mark made of stars",
+        "effect": "none"
+      },
+      {
+        "narration": "So what did we hear",
+        "visual": "a glowing radio dish alone under a huge galaxy",
+        "effect": "none"
+      },
+      {
+        "narration": "for seventy two seconds in 1977?",
+        "visual": "a mysterious glowing orange monolith in deep space",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-frb",
+    "title": "Fast Radio Bursts",
+    "hook": "Every day, flashes from other galaxies hit Earth, and some of them repeat on a schedule.",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "Right now, something in deep space",
+        "visual": "a distant spiral galaxy glowing in darkness",
+        "effect": "none"
+      },
+      {
+        "narration": "is firing flashes at us.",
+        "visual": "a bright cyan beam shooting across space toward Earth",
+        "effect": "flash"
+      },
+      {
+        "narration": "They're called fast radio bursts.",
+        "visual": "jagged glowing radio waves flying through space",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Each one lasts about a millisecond.",
+        "visual": "a stopwatch with a tiny glowing spark",
+        "effect": "none"
+      },
+      {
+        "narration": "Shorter than a blink.",
+        "visual": "a cartoon eye mid-blink with sparkles",
+        "effect": "none"
+      },
+      {
+        "narration": "But in that instant",
+        "visual": "an explosion of light in a dark sky",
+        "effect": "flash"
+      },
+      {
+        "narration": "some release more energy",
+        "visual": "a glowing energy meter overflowing",
+        "effect": "shake"
+      },
+      {
+        "narration": "than our Sun puts out in days.",
+        "visual": "the Sun glowing next to a calendar",
+        "effect": "pulse"
+      },
+      {
+        "narration": "The first was found in 2007,",
+        "visual": "a radio dish on a hill under the stars",
+        "effect": "none"
+      },
+      {
+        "narration": "hiding in old telescope data.",
+        "visual": "stacks of old printouts with one glowing spike",
+        "effect": "none"
+      },
+      {
+        "narration": "Now we see them from all over the sky.",
+        "visual": "the whole sky dotted with glowing flashes",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Most flash once and vanish.",
+        "visual": "a single spark fading into darkness",
+        "effect": "none"
+      },
+      {
+        "narration": "But some repeat.",
+        "visual": "the same flash appearing again and again",
+        "effect": "glitch"
+      },
+      {
+        "narration": "One pulses in a sixteen day cycle,",
+        "visual": "a glowing calendar with a repeating pattern",
+        "effect": "pulse"
+      },
+      {
+        "narration": "like clockwork.",
+        "visual": "a giant glowing clock face in space",
+        "effect": "none"
+      },
+      {
+        "narration": "In 2020 we caught one",
+        "visual": "a radio dish catching a beam",
+        "effect": "flash"
+      },
+      {
+        "narration": "from a dead star in our own galaxy,",
+        "visual": "a spinning magnetar with twisted magnetic field lines",
+        "effect": "pulse"
+      },
+      {
+        "narration": "a magnetar.",
+        "visual": "a small super-bright star with huge magnetic loops",
+        "effect": "shake"
+      },
+      {
+        "narration": "But that doesn't explain them all.",
+        "visual": "a puzzle with missing glowing pieces",
+        "effect": "none"
+      },
+      {
+        "narration": "Some come from places",
+        "visual": "a strange cluster of galaxies far away",
+        "effect": "none"
+      },
+      {
+        "narration": "where magnetars shouldn't be.",
+        "visual": "an old dim galaxy with a question mark",
+        "effect": "glitch"
+      },
+      {
+        "narration": "So what else out there",
+        "visual": "a dark universe full of faint lights",
+        "effect": "none"
+      },
+      {
+        "narration": "is powerful enough to do this?",
+        "visual": "a mysterious glowing source behind a nebula",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-tabby",
+    "title": "Tabby's Star",
+    "hook": "A star 1,400 light years away keeps dimming by up to 22 percent, and no planet could do that.",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "Around 1,400 light years away",
+        "visual": "a bright yellow star far away in space",
+        "effect": "none"
+      },
+      {
+        "narration": "there's a star that flickers wrong.",
+        "visual": "a star flickering like a broken lamp",
+        "effect": "glitch"
+      },
+      {
+        "narration": "NASA's Kepler telescope watched it",
+        "visual": "a space telescope pointing at a star field",
+        "effect": "none"
+      },
+      {
+        "narration": "for four years.",
+        "visual": "calendar pages flipping",
+        "effect": "none"
+      },
+      {
+        "narration": "Normally a passing planet",
+        "visual": "a small planet crossing in front of a star",
+        "effect": "none"
+      },
+      {
+        "narration": "dims a star by about one percent.",
+        "visual": "a light meter dropping slightly",
+        "effect": "none"
+      },
+      {
+        "narration": "This star dropped twenty two percent.",
+        "visual": "a light meter crashing down",
+        "effect": "shake"
+      },
+      {
+        "narration": "And not on any schedule.",
+        "visual": "a chaotic jagged graph line",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Citizen scientists spotted it first,",
+        "visual": "people at laptops pointing at a strange graph",
+        "effect": "none"
+      },
+      {
+        "narration": "and astronomer Tabetha Boyajian",
+        "visual": "a scientist presenting a glowing graph",
+        "effect": "none"
+      },
+      {
+        "narration": "published it in 2015.",
+        "visual": "a scientific paper with a star on the cover",
+        "effect": "flash"
+      },
+      {
+        "narration": "Some even wondered",
+        "visual": "a person staring up at the night sky",
+        "effect": "none"
+      },
+      {
+        "narration": "if something huge was built around it.",
+        "visual": "giant glowing panels around a star",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Later data showed",
+        "visual": "a telescope with colorful light beams",
+        "effect": "none"
+      },
+      {
+        "narration": "the dimming changes with color,",
+        "visual": "a rainbow spectrum with dark bands",
+        "effect": "none"
+      },
+      {
+        "narration": "which points to dust,",
+        "visual": "a glowing cloud of space dust",
+        "effect": "none"
+      },
+      {
+        "narration": "not a solid structure.",
+        "visual": "giant panels fading away",
+        "effect": "none"
+      },
+      {
+        "narration": "But where does that much dust come from?",
+        "visual": "a swirling dust cloud around a star",
+        "effect": "pulse"
+      },
+      {
+        "narration": "A smashed comet? A destroyed planet?",
+        "visual": "a planet breaking apart into pieces",
+        "effect": "shake"
+      },
+      {
+        "narration": "Nobody knows for sure.",
+        "visual": "a big question mark made of stars",
+        "effect": "none"
+      },
+      {
+        "narration": "And it still flickers today.",
+        "visual": "the star flickering in the dark",
+        "effect": "glitch"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-oumuamua",
+    "title": "'Oumuamua",
+    "hook": "The first object we ever saw from another star system sped up as it left, and we still don't know why.",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "October 2017, Hawaii.",
+        "visual": "a telescope dome on a volcano under stars",
+        "effect": "flash"
+      },
+      {
+        "narration": "A telescope spots something",
+        "visual": "a tiny glowing dot moving across stars",
+        "effect": "none"
+      },
+      {
+        "narration": "moving way too fast.",
+        "visual": "a streak of light rushing past planets",
+        "effect": "shake"
+      },
+      {
+        "narration": "Its path proved it",
+        "visual": "a curved orbit line around the Sun",
+        "effect": "none"
+      },
+      {
+        "narration": "came from another star system.",
+        "visual": "a far away star with a line leading to our Sun",
+        "effect": "pulse"
+      },
+      {
+        "narration": "The first one we'd ever seen.",
+        "visual": "a glowing trophy in space",
+        "effect": "flash"
+      },
+      {
+        "narration": "They named it 'Oumuamua,",
+        "visual": "a long reddish rock tumbling in space",
+        "effect": "none"
+      },
+      {
+        "narration": "Hawaiian for scout.",
+        "visual": "a small scout figure with a telescope",
+        "effect": "none"
+      },
+      {
+        "narration": "It was strange.",
+        "visual": "a weird elongated rock spinning",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Long and thin, or flat like a pancake,",
+        "visual": "a cigar shaped rock next to a pancake shaped rock",
+        "effect": "none"
+      },
+      {
+        "narration": "tumbling end over end.",
+        "visual": "a rock flipping through space",
+        "effect": "none"
+      },
+      {
+        "narration": "Then it did something weird.",
+        "visual": "a glowing warning sign in space",
+        "effect": "shake"
+      },
+      {
+        "narration": "As it left the Sun,",
+        "visual": "the rock flying away from the bright Sun",
+        "effect": "none"
+      },
+      {
+        "narration": "it sped up a little.",
+        "visual": "a speed gauge needle rising",
+        "effect": "flash"
+      },
+      {
+        "narration": "Comets do that by venting gas.",
+        "visual": "a comet with a glowing tail",
+        "effect": "none"
+      },
+      {
+        "narration": "But we saw no tail at all.",
+        "visual": "a plain rock with no tail",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Maybe hidden hydrogen.",
+        "visual": "invisible gas puffing from a rock",
+        "effect": "none"
+      },
+      {
+        "narration": "Maybe nitrogen ice.",
+        "visual": "an icy shard glowing pale blue",
+        "effect": "none"
+      },
+      {
+        "narration": "Scientists still argue.",
+        "visual": "two cartoon scientists debating at a chalkboard",
+        "effect": "none"
+      },
+      {
+        "narration": "And we can't check,",
+        "visual": "the rock disappearing into darkness",
+        "effect": "none"
+      },
+      {
+        "narration": "because it's already gone.",
+        "visual": "an empty starfield",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-voynich",
+    "title": "The Voynich Manuscript",
+    "hook": "A 600-year-old book written in a language no human has ever been able to read.",
+    "style": "flat vector storybook illustration with simple characters, warm sunset oranges, teals and purples, soft gradients",
+    "scenes": [
+      {
+        "narration": "There's a book at Yale",
+        "visual": "an old library with tall wooden shelves",
+        "effect": "none"
+      },
+      {
+        "narration": "that nobody can read.",
+        "visual": "an old open book glowing mysteriously",
+        "effect": "flash"
+      },
+      {
+        "narration": "About 240 pages.",
+        "visual": "a thick old book with worn pages",
+        "effect": "none"
+      },
+      {
+        "narration": "Strange plants nobody can identify,",
+        "visual": "hand-drawn imaginary plants on old paper",
+        "effect": "none"
+      },
+      {
+        "narration": "star charts,",
+        "visual": "old circular star diagrams on parchment",
+        "effect": "pulse"
+      },
+      {
+        "narration": "and pages of writing",
+        "visual": "lines of curly unknown symbols on old paper",
+        "effect": "none"
+      },
+      {
+        "narration": "in an alphabet that matches",
+        "visual": "rows of strange letters floating in the air",
+        "effect": "glitch"
+      },
+      {
+        "narration": "no known language.",
+        "visual": "a world map with question marks",
+        "effect": "none"
+      },
+      {
+        "narration": "It's named after Wilfrid Voynich,",
+        "visual": "a book dealer in a suit holding an old book",
+        "effect": "none"
+      },
+      {
+        "narration": "who bought it in 1912.",
+        "visual": "a dusty shop counter with an old book",
+        "effect": "none"
+      },
+      {
+        "narration": "Carbon dating says the pages",
+        "visual": "a lab with a glowing scanner over parchment",
+        "effect": "none"
+      },
+      {
+        "narration": "are from the early 1400s.",
+        "visual": "an hourglass with medieval scenery",
+        "effect": "flash"
+      },
+      {
+        "narration": "So it's real and old.",
+        "visual": "an old sealed manuscript",
+        "effect": "none"
+      },
+      {
+        "narration": "Some of the best codebreakers",
+        "visual": "people at desks with papers and machines",
+        "effect": "none"
+      },
+      {
+        "narration": "from World War Two tried.",
+        "visual": "an old code machine with glowing keys",
+        "effect": "shake"
+      },
+      {
+        "narration": "They failed.",
+        "visual": "a crumpled paper with a red X",
+        "effect": "none"
+      },
+      {
+        "narration": "Is it a cipher?",
+        "visual": "a lock made of letters",
+        "effect": "none"
+      },
+      {
+        "narration": "A lost language?",
+        "visual": "an ancient ruined city at sunset",
+        "effect": "none"
+      },
+      {
+        "narration": "Or a brilliant fake?",
+        "visual": "a mask over a book",
+        "effect": "glitch"
+      },
+      {
+        "narration": "After six hundred years,",
+        "visual": "candles burning down beside a book",
+        "effect": "none"
+      },
+      {
+        "narration": "we still don't know what it says.",
+        "visual": "the book closing slowly in the dark",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-antikythera",
+    "title": "The Antikythera Mechanism",
+    "hook": "Divers found a 2,000-year-old computer in a shipwreck, and nothing like it appears again for over a thousand years.",
+    "style": "flat vector storybook illustration with simple characters, warm sunset oranges, teals and purples, soft gradients",
+    "scenes": [
+      {
+        "narration": "1901. Sponge divers in Greece",
+        "visual": "old fashioned divers in a boat on a turquoise sea",
+        "effect": "none"
+      },
+      {
+        "narration": "find a shipwreck.",
+        "visual": "an ancient ship wreck on the sea floor",
+        "effect": "flash"
+      },
+      {
+        "narration": "Statues, coins, pottery.",
+        "visual": "ancient statues and coins scattered underwater",
+        "effect": "none"
+      },
+      {
+        "narration": "And a lump of corroded bronze.",
+        "visual": "a green crusty lump of bronze",
+        "effect": "none"
+      },
+      {
+        "narration": "Then someone notices",
+        "visual": "a curious archaeologist with a magnifying glass",
+        "effect": "none"
+      },
+      {
+        "narration": "there's a gear inside.",
+        "visual": "a tiny bronze gear revealed in rock",
+        "effect": "shake"
+      },
+      {
+        "narration": "X-rays reveal at least thirty gears,",
+        "visual": "a glowing x-ray of many interlocking gears",
+        "effect": "pulse"
+      },
+      {
+        "narration": "some with teeth smaller than a millimeter.",
+        "visual": "close up of tiny precise gear teeth",
+        "effect": "none"
+      },
+      {
+        "narration": "It's a computer.",
+        "visual": "a gear machine glowing with light",
+        "effect": "flash"
+      },
+      {
+        "narration": "Turn a handle",
+        "visual": "a hand turning a small crank",
+        "effect": "none"
+      },
+      {
+        "narration": "and it shows the Sun, the Moon,",
+        "visual": "glowing Sun and Moon dials",
+        "effect": "none"
+      },
+      {
+        "narration": "moon phases and eclipses,",
+        "visual": "a moon cycling through phases",
+        "effect": "pulse"
+      },
+      {
+        "narration": "years into the future.",
+        "visual": "a calendar spinning forward",
+        "effect": "none"
+      },
+      {
+        "narration": "It's over two thousand years old.",
+        "visual": "an ancient Greek city at sunset",
+        "effect": "none"
+      },
+      {
+        "narration": "Nothing this complex shows up again",
+        "visual": "an empty timeline stretching away",
+        "effect": "none"
+      },
+      {
+        "narration": "for over a thousand years.",
+        "visual": "medieval clock tower far in the distance",
+        "effect": "none"
+      },
+      {
+        "narration": "Who built it?",
+        "visual": "a shadowy figure in a workshop",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Were there others?",
+        "visual": "rows of mystery boxes",
+        "effect": "none"
+      },
+      {
+        "narration": "And how was this knowledge lost?",
+        "visual": "ruins crumbling into sand",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-darkmatter",
+    "title": "Dark Matter",
+    "hook": "Most of the matter in the universe is invisible, and we have never caught a single piece of it.",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "Look at a galaxy.",
+        "visual": "a bright spiral galaxy",
+        "effect": "flash"
+      },
+      {
+        "narration": "Billions of stars, spinning.",
+        "visual": "a galaxy rotating with motion trails",
+        "effect": "none"
+      },
+      {
+        "narration": "In the 1970s, Vera Rubin",
+        "visual": "an astronomer at a telescope with notebooks",
+        "effect": "none"
+      },
+      {
+        "narration": "measured how fast they spin.",
+        "visual": "a speedometer next to a galaxy",
+        "effect": "none"
+      },
+      {
+        "narration": "Way too fast.",
+        "visual": "the speedometer needle slamming to the max",
+        "effect": "shake"
+      },
+      {
+        "narration": "Fast enough to fly apart.",
+        "visual": "stars flying off a galaxy edge",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Unless something invisible",
+        "visual": "a faint glowing halo around a galaxy",
+        "effect": "pulse"
+      },
+      {
+        "narration": "is holding them together.",
+        "visual": "invisible hands holding a galaxy",
+        "effect": "none"
+      },
+      {
+        "narration": "We call it dark matter.",
+        "visual": "a dark glowing cloud surrounding galaxies",
+        "effect": "flash"
+      },
+      {
+        "narration": "It doesn't shine.",
+        "visual": "a light switch turned off",
+        "effect": "none"
+      },
+      {
+        "narration": "It doesn't reflect light.",
+        "visual": "a mirror showing nothing",
+        "effect": "none"
+      },
+      {
+        "narration": "But its gravity is everywhere.",
+        "visual": "a web of glowing threads connecting galaxies",
+        "effect": "pulse"
+      },
+      {
+        "narration": "It's about eighty five percent",
+        "visual": "a pie chart mostly dark",
+        "effect": "none"
+      },
+      {
+        "narration": "of all the matter in the universe.",
+        "visual": "the whole universe as a dark web",
+        "effect": "none"
+      },
+      {
+        "narration": "Scientists built detectors",
+        "visual": "a huge tank detector deep underground",
+        "effect": "none"
+      },
+      {
+        "narration": "deep underground to catch it.",
+        "visual": "a mine shaft with a glowing lab at the bottom",
+        "effect": "none"
+      },
+      {
+        "narration": "They've waited for decades.",
+        "visual": "a scientist asleep by a monitor",
+        "effect": "none"
+      },
+      {
+        "narration": "Not one confirmed hit.",
+        "visual": "an empty screen with a flat line",
+        "effect": "glitch"
+      },
+      {
+        "narration": "So what is most of the universe",
+        "visual": "a vast dark cosmos with faint galaxies",
+        "effect": "none"
+      },
+      {
+        "narration": "actually made of?",
+        "visual": "a giant question mark glowing in space",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-attractor",
+    "title": "The Great Attractor",
+    "hook": "Our whole galaxy is being pulled toward something we can't see, at over 2 million kilometers an hour.",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "You're moving right now.",
+        "visual": "Earth spinning in space",
+        "effect": "none"
+      },
+      {
+        "narration": "Not just with the Earth.",
+        "visual": "Earth orbiting the Sun",
+        "effect": "none"
+      },
+      {
+        "narration": "Our whole galaxy is moving",
+        "visual": "the Milky Way sliding through space",
+        "effect": "flash"
+      },
+      {
+        "narration": "over two million kilometers an hour.",
+        "visual": "a speed gauge glowing red",
+        "effect": "shake"
+      },
+      {
+        "narration": "And it's being pulled",
+        "visual": "glowing arrows pulling a galaxy",
+        "effect": "none"
+      },
+      {
+        "narration": "toward something.",
+        "visual": "a bright mysterious glow far away",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Astronomers call it",
+        "visual": "a telescope pointed at a dark region",
+        "effect": "none"
+      },
+      {
+        "narration": "the Great Attractor.",
+        "visual": "a huge glowing gravity well in space",
+        "effect": "flash"
+      },
+      {
+        "narration": "Hundreds of millions of light years away,",
+        "visual": "galaxies stretching into the distance",
+        "effect": "none"
+      },
+      {
+        "narration": "with the mass of",
+        "visual": "a cosmic weighing scale",
+        "effect": "none"
+      },
+      {
+        "narration": "tens of thousands of galaxies.",
+        "visual": "thousands of tiny galaxies in a cluster",
+        "effect": "pulse"
+      },
+      {
+        "narration": "But we can barely see it.",
+        "visual": "a bright band of stars blocking the view",
+        "effect": "none"
+      },
+      {
+        "narration": "It sits behind our own galaxy,",
+        "visual": "the Milky Way disk covering part of the sky",
+        "effect": "none"
+      },
+      {
+        "narration": "where dust and stars block the view.",
+        "visual": "thick dust clouds hiding a glow",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Astronomers call that region",
+        "visual": "a dark band on a sky map",
+        "effect": "none"
+      },
+      {
+        "narration": "the Zone of Avoidance.",
+        "visual": "a warning sign floating in space",
+        "effect": "shake"
+      },
+      {
+        "narration": "X-ray and radio telescopes",
+        "visual": "a radio dish and a space telescope",
+        "effect": "none"
+      },
+      {
+        "narration": "are slowly peeking through.",
+        "visual": "light beams piercing through dust",
+        "effect": "pulse"
+      },
+      {
+        "narration": "And even farther,",
+        "visual": "an even larger glow behind the first",
+        "effect": "none"
+      },
+      {
+        "narration": "something bigger may be pulling too.",
+        "visual": "a giant supercluster glowing in the deep distance",
+        "effect": "flash"
+      },
+      {
+        "narration": "We're all falling",
+        "visual": "the Milky Way drifting toward a glow",
+        "effect": "none"
+      },
+      {
+        "narration": "toward something we can't see.",
+        "visual": "a dark mysterious void with a faint light",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-hessdalen",
+    "title": "The Hessdalen Lights",
+    "hook": "For decades glowing lights have floated over one small valley in Norway, and scientists have a camera watching them.",
+    "style": "flat vector cartoon, bold simple shapes, deep teal, navy and glowing yellow accents, moody night lighting",
+    "scenes": [
+      {
+        "narration": "In a quiet valley in Norway",
+        "visual": "a snowy Norwegian valley with small houses at night",
+        "effect": "none"
+      },
+      {
+        "narration": "strange lights float in the sky.",
+        "visual": "glowing yellow orbs hovering above a valley",
+        "effect": "flash"
+      },
+      {
+        "narration": "It's called Hessdalen.",
+        "visual": "a wooden village sign in snow",
+        "effect": "none"
+      },
+      {
+        "narration": "In the early 1980s",
+        "visual": "an old car with headlights on a snowy road",
+        "effect": "none"
+      },
+      {
+        "narration": "people saw them up to twenty times a week.",
+        "visual": "villagers pointing at lights in the sky",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Some hover for over an hour.",
+        "visual": "a glowing orb floating still above trees",
+        "effect": "none"
+      },
+      {
+        "narration": "Some zoom across the valley.",
+        "visual": "a streak of light racing over mountains",
+        "effect": "shake"
+      },
+      {
+        "narration": "White, yellow, sometimes red.",
+        "visual": "three glowing orbs in different colors",
+        "effect": "none"
+      },
+      {
+        "narration": "Scientists took it seriously.",
+        "visual": "researchers with cameras and notebooks in snow",
+        "effect": "none"
+      },
+      {
+        "narration": "Since 1983 they've studied it,",
+        "visual": "a field research tent with instruments",
+        "effect": "none"
+      },
+      {
+        "narration": "and today a station",
+        "visual": "a small research hut with antennas on a hill",
+        "effect": "none"
+      },
+      {
+        "narration": "watches the valley automatically.",
+        "visual": "a camera on a pole pointed at the sky",
+        "effect": "pulse"
+      },
+      {
+        "narration": "They've caught the lights on camera.",
+        "visual": "a screen showing a bright dot",
+        "effect": "flash"
+      },
+      {
+        "narration": "But what are they?",
+        "visual": "a glowing orb with a question mark",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Burning dust from the mines?",
+        "visual": "a glowing cloud of dust",
+        "effect": "none"
+      },
+      {
+        "narration": "Electricity from the rocks?",
+        "visual": "glowing sparks from rocks",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Each idea explains some of it.",
+        "visual": "puzzle pieces that almost fit",
+        "effect": "none"
+      },
+      {
+        "narration": "None explains all of it.",
+        "visual": "a puzzle with a missing piece",
+        "effect": "none"
+      },
+      {
+        "narration": "And the lights keep coming.",
+        "visual": "orbs rising over the valley at night",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  },
+  {
+    "id": "lib-fermi",
+    "title": "Where Is Everybody?",
+    "hook": "There may be billions of planets that could have life, so why haven't we heard a single word from any of them?",
+    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "scenes": [
+      {
+        "narration": "1950. A lunch table at Los Alamos.",
+        "visual": "scientists eating lunch at a table in the desert",
+        "effect": "none"
+      },
+      {
+        "narration": "Physicist Enrico Fermi",
+        "visual": "a thoughtful scientist with a coffee cup",
+        "effect": "none"
+      },
+      {
+        "narration": "asks a simple question.",
+        "visual": "a speech bubble above a lunch table",
+        "effect": "flash"
+      },
+      {
+        "narration": "Where is everybody?",
+        "visual": "a huge empty starry sky",
+        "effect": "shake"
+      },
+      {
+        "narration": "Our galaxy has hundreds of billions of stars.",
+        "visual": "a spiral galaxy packed with stars",
+        "effect": "pulse"
+      },
+      {
+        "narration": "Many have planets.",
+        "visual": "planets orbiting many stars",
+        "effect": "none"
+      },
+      {
+        "narration": "Billions could be like Earth.",
+        "visual": "rows of small blue planets",
+        "effect": "none"
+      },
+      {
+        "narration": "The galaxy is billions of years old.",
+        "visual": "an hourglass with galaxies inside",
+        "effect": "none"
+      },
+      {
+        "narration": "Plenty of time for someone",
+        "visual": "a ticking clock in space",
+        "effect": "none"
+      },
+      {
+        "narration": "to spread from star to star.",
+        "visual": "tiny ships hopping between stars",
+        "effect": "pulse"
+      },
+      {
+        "narration": "So we listen.",
+        "visual": "radio dishes pointed at the sky",
+        "effect": "none"
+      },
+      {
+        "narration": "For over sixty years.",
+        "visual": "calendar pages flying into space",
+        "effect": "none"
+      },
+      {
+        "narration": "Silence.",
+        "visual": "a silent empty void",
+        "effect": "glitch"
+      },
+      {
+        "narration": "Maybe life is incredibly rare.",
+        "visual": "a single tiny glowing planet",
+        "effect": "none"
+      },
+      {
+        "narration": "Maybe they don't use radio.",
+        "visual": "an old radio covered in dust",
+        "effect": "none"
+      },
+      {
+        "narration": "Maybe they're too far apart.",
+        "visual": "two tiny planets very far apart",
+        "effect": "none"
+      },
+      {
+        "narration": "Or maybe they're quiet",
+        "visual": "a planet with lights switched off",
+        "effect": "none"
+      },
+      {
+        "narration": "on purpose.",
+        "visual": "a finger raised in front of lips, in space",
+        "effect": "shake"
+      },
+      {
+        "narration": "Every answer is unsettling.",
+        "visual": "a lonely astronaut looking at stars",
+        "effect": "none"
+      },
+      {
+        "narration": "So, where is everybody?",
+        "visual": "Earth alone in an enormous dark universe",
+        "effect": "pulse"
+      }
+    ],
+    "source": "claude",
+    "status": "new"
+  }
+]
