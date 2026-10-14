@@ -3,7 +3,7 @@
     "id": "lib-wow",
     "title": "The Wow! Signal",
     "hook": "In 1977 a telescope caught a signal from space so strong an astronomer wrote 'Wow!' next to it, and it never came back.",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "August 1977, Ohio.",
@@ -128,13 +128,94 @@
     ],
     "source": "claude",
     "status": "new",
-    "art": "library/art/lib-wow"
+    "art": "library/art/lib-wow",
+    "photos": "library/photos/lib-wow",
+    "shots": [
+      {
+        "scenes": [
+          0,
+          1,
+          2
+        ],
+        "effect": "none",
+        "visual": "The Big Ear radio telescope in Ohio in 1977: a huge flat metal reflector the size of three football fields lying in a grassy field, with a tall curved reflector wall behind it, at night under a clear starry sky"
+      },
+      {
+        "scenes": [
+          3,
+          4,
+          5
+        ],
+        "effect": "flash",
+        "visual": "A single bright beam of radio energy streaking out of deep space toward Earth, glowing cyan light trail, stars and a distant nebula"
+      },
+      {
+        "scenes": [
+          6,
+          7,
+          8
+        ],
+        "effect": "none",
+        "visual": "Planet Earth seen from space at night, city lights glowing, a thin beam of light sweeping across the starry sky above it"
+      },
+      {
+        "scenes": [
+          9,
+          10
+        ],
+        "effect": "none",
+        "visual": "A 1970s astronomer in a dim office at night, sitting at a cluttered desk under a desk lamp, reading a long folded computer printout, film photo grain"
+      },
+      {
+        "scenes": [
+          11,
+          12
+        ],
+        "effect": "flash",
+        "visual": "Close-up of an old 1970s dot-matrix computer printout with columns of numbers, one vertical sequence circled in red pen, the word Wow! handwritten in red next to it"
+      },
+      {
+        "scenes": [
+          13,
+          14,
+          15
+        ],
+        "effect": "pulse",
+        "visual": "The center of the Milky Way in the constellation Sagittarius, dense glowing star clouds and dark dust lanes, astrophotography"
+      },
+      {
+        "scenes": [
+          16,
+          17,
+          18
+        ],
+        "effect": "none",
+        "visual": "A row of giant white radio telescope dishes in a desert pointing at the night sky, long-exposure star trails above them"
+      },
+      {
+        "scenes": [
+          19,
+          20,
+          21
+        ],
+        "effect": "glitch",
+        "visual": "A huge glowing cloud of hydrogen gas in deep space suddenly flaring with bright light, colorful nebula"
+      },
+      {
+        "scenes": [
+          22,
+          23
+        ],
+        "effect": "pulse",
+        "visual": "A lone radio telescope dish silhouetted on a hill under an enormous glowing galaxy at night, mysterious and quiet"
+      }
+    ]
   },
   {
     "id": "lib-frb",
     "title": "Fast Radio Bursts",
     "hook": "Every day, flashes from other galaxies hit Earth, and some of them repeat on a schedule.",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "Right now, something in deep space",
@@ -260,7 +341,7 @@
     "id": "lib-tabby",
     "title": "Tabby's Star",
     "hook": "A star 1,400 light years away keeps dimming by up to 22 percent, and no planet could do that.",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "Around 1,400 light years away",
@@ -375,7 +456,7 @@
     "id": "lib-oumuamua",
     "title": "'Oumuamua",
     "hook": "The first object we ever saw from another star system sped up as it left, and we still don't know why.",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "October 2017, Hawaii.",
@@ -490,7 +571,7 @@
     "id": "lib-voynich",
     "title": "The Voynich Manuscript",
     "hook": "A 600-year-old book written in a language no human has ever been able to read.",
-    "style": "flat vector storybook illustration with simple characters, warm sunset oranges, teals and purples, soft gradients",
+    "style": "cinematic, photorealistic, warm natural light, historically accurate, highly detailed, documentary film still",
     "scenes": [
       {
         "narration": "There's a book at Yale",
@@ -605,7 +686,7 @@
     "id": "lib-antikythera",
     "title": "The Antikythera Mechanism",
     "hook": "Divers found a 2,000-year-old computer in a shipwreck, and nothing like it appears again for over a thousand years.",
-    "style": "flat vector storybook illustration with simple characters, warm sunset oranges, teals and purples, soft gradients",
+    "style": "cinematic, photorealistic, warm natural light, historically accurate, highly detailed, documentary film still",
     "scenes": [
       {
         "narration": "1901. Sponge divers in Greece",
@@ -710,7 +791,7 @@
     "id": "lib-darkmatter",
     "title": "Dark Matter",
     "hook": "Most of the matter in the universe is invisible, and we have never caught a single piece of it.",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "Look at a galaxy.",
@@ -820,7 +901,7 @@
     "id": "lib-attractor",
     "title": "The Great Attractor",
     "hook": "Our whole galaxy is being pulled toward something we can't see, at over 2 million kilometers an hour.",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "You're moving right now.",
@@ -940,7 +1021,7 @@
     "id": "lib-hessdalen",
     "title": "The Hessdalen Lights",
     "hook": "For decades glowing lights have floated over one small valley in Norway, and scientists have a camera watching them.",
-    "style": "flat vector cartoon, bold simple shapes, deep teal, navy and glowing yellow accents, moody night lighting",
+    "style": "cinematic, photorealistic, moody night atmosphere, highly detailed, documentary film still",
     "scenes": [
       {
         "narration": "In a quiet valley in Norway",
@@ -1045,7 +1126,7 @@
     "id": "lib-fermi",
     "title": "Where Is Everybody?",
     "hook": "There may be billions of planets that could have life, so why haven't we heard a single word from any of them?",
-    "style": "flat vector cartoon, glossy 2D game-art style, glowing neon cyan, orange and magenta on dark blue space with small stars",
+    "style": "cinematic, photorealistic, dramatic moody lighting, deep blues and purples with warm highlights, highly detailed, astrophotography feel",
     "scenes": [
       {
         "narration": "1950. A lunch table at Los Alamos.",

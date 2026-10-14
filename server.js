@@ -72,7 +72,7 @@ async function startJob(topic, aspect, idea, voice, music, musicStart) {
     try {
       if (ideaId) await updateIdea(ideaId, { status: 'making' });
       // Ideas from the library already have a full script, so no AI call is needed.
-      job.script = idea?.scenes ? { title: idea.title, style: idea.style, art: idea.art, scenes: idea.scenes } : await writeScript(topic);
+      job.script = idea?.scenes ? { title: idea.title, style: idea.style, art: idea.art, photos: idea.photos, shots: idea.shots, scenes: idea.scenes } : await writeScript(topic);
       job.status = 'rendering';
       await fs.promises.mkdir(path.join(OUT, id), { recursive: true });
       await fs.promises.writeFile(path.join(OUT, id, 'script.json'), JSON.stringify({ topic, ...job.script }, null, 2));
@@ -96,7 +96,7 @@ http.createServer(async (req, res) => {
     const idea = body.ideaId && (await loadIdeas()).find(i => i.id === body.ideaId);
     if (idea) topic = `${idea.title}. ${idea.hook}`;
     topic ||= 'a mysterious unexplained signal from space';
-    return send(res, 200, await startJob(topic.slice(0, 400), body.aspect === 'vertical' ? 'vertical' : 'landscape', idea, VOICES.includes(body.voice) ? body.voice : undefined,
+    return send(res, 200, await startJob(topic.slice(0, 400), ['vertical', 'landscape'].includes(body.aspect) ? body.aspect : 'classic', idea, VOICES.includes(body.voice) ? body.voice : undefined,
       ['ambient', 'none', ...(await listMusic())].includes(body.music) ? body.music : 'ambient',
       Math.min(Math.max(+body.musicStart || 0, 0), 3600)));
   }
