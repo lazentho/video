@@ -20,7 +20,7 @@ const send = (res, code, body, type = 'application/json') => {
   res.end(typeof body === 'string' || Buffer.isBuffer(body) ? body : JSON.stringify(body));
 };
 
-async function startJob(topic) {
+async function startJob(topic, aspect) {
   const id = crypto.randomBytes(5).toString('hex');
   const job = { id, status: 'writing', message: 'Writing the script', progress: 0.02 };
   jobs.set(id, job);
@@ -28,7 +28,7 @@ async function startJob(topic) {
     try {
       job.script = await writeScript(topic);
       job.status = 'rendering';
-      await renderVideo(job.script, path.join(OUT, id), (message, progress) => Object.assign(job, { message, progress }));
+      await renderVideo(job.script, path.join(OUT, id), (message, progress) => Object.assign(job, { message, progress }), { aspect });
       Object.assign(job, { status: 'done', message: 'Done', progress: 1, url: `/video/${id}.mp4` });
     } catch (e) {
       Object.assign(job, { status: 'error', message: e.message });
@@ -43,8 +43,9 @@ http.createServer(async (req, res) => {
   if (req.method === 'POST' && url.pathname === '/api/generate') {
     let body = '';
     for await (const c of req) body += c;
-    const topic = (JSON.parse(body || '{}').topic || '').trim() || 'a mysterious unexplained signal from space';
-    return send(res, 200, await startJob(topic.slice(0, 300)));
+    const req_ = JSON.parse(body || '{}');
+    const topic = (req_.topic || '').trim() || 'a mysterious unexplained signal from space';
+    return send(res, 200, await startJob(topic.slice(0, 300), req_.aspect === 'vertical' ? 'vertical' : 'landscape'));
   }
   const j = url.pathname.match(/^\/api\/jobs\/(\w+)$/);
   if (j) return jobs.has(j[1]) ? send(res, 200, jobs.get(j[1])) : send(res, 404, { error: 'not found' });

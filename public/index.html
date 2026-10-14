@@ -5,8 +5,8 @@
 body{margin:0;font-family:system-ui,sans-serif;background:#07080f;color:#e8ecff;display:flex;justify-content:center;padding:24px 16px}
 main{width:100%;max-width:520px}
 h1{font-size:1.6rem;margin:0 0 4px}p{color:#9aa3c7;margin:0 0 18px}
-input,button{width:100%;box-sizing:border-box;font-size:1rem;padding:14px;border-radius:10px;border:1px solid #2a3060}
-input{background:#10132a;color:inherit}button{margin-top:10px;background:#5b6cff;border:0;color:#fff;font-weight:600;cursor:pointer}
+input,select,button{width:100%;box-sizing:border-box;font-size:1rem;padding:14px;border-radius:10px;border:1px solid #2a3060}
+input,select{margin-bottom:0;background:#10132a;color:inherit}select{margin-top:10px}button{margin-top:10px;background:#5b6cff;border:0;color:#fff;font-weight:600;cursor:pointer}
 button:disabled{opacity:.5}#bar{height:6px;background:#10132a;border-radius:3px;margin-top:18px;overflow:hidden}
 #fill{height:100%;width:0;background:#5b6cff;transition:width .4s}#msg{margin-top:8px;color:#9aa3c7;min-height:1.2em}
 video{width:100%;margin-top:16px;border-radius:12px;background:#000}a{color:#8d99ff}
@@ -14,13 +14,14 @@ video{width:100%;margin-top:16px;border-radius:12px;background:#000}a{color:#8d9
 <h1>Mystery Video Maker</h1>
 <p>Type a mystery or leave it empty for a surprise. Get a short vertical video.</p>
 <input id="topic" placeholder="e.g. The Wow! signal from space">
+<select id="aspect"><option value="landscape">Wide (16:9)</option><option value="vertical">Tall (9:16)</option></select>
 <button id="go">Make video</button>
 <div id="bar"><div id="fill"></div></div><div id="msg"></div><div id="out"></div>
 <script>
 const $=id=>document.getElementById(id);
 $('go').onclick=async()=>{
   $('go').disabled=true;$('out').innerHTML='';
-  let job=await (await fetch('/api/generate',{method:'POST',body:JSON.stringify({topic:$('topic').value})})).json();
+  let job=await (await fetch('/api/generate',{method:'POST',body:JSON.stringify({topic:$('topic').value,aspect:$('aspect').value})})).json();
   while(job.status!=='done'&&job.status!=='error'){
     $('fill').style.width=(job.progress*100)+'%';$('msg').textContent=job.message;
     await new Promise(r=>setTimeout(r,1000));
