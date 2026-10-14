@@ -63,7 +63,7 @@ async function readJson(req) {
   return JSON.parse(body || '{}');
 }
 
-async function startJob(topic, aspect, idea, voice, music) {
+async function startJob(topic, aspect, idea, voice, music, musicStart) {
   const ideaId = idea?.id;
   const id = crypto.randomBytes(5).toString('hex');
   const job = { id, status: 'writing', message: 'Writing the script', progress: 0.02 };
@@ -76,7 +76,7 @@ async function startJob(topic, aspect, idea, voice, music) {
       job.status = 'rendering';
       await fs.promises.mkdir(path.join(OUT, id), { recursive: true });
       await fs.promises.writeFile(path.join(OUT, id, 'script.json'), JSON.stringify({ topic, ...job.script }, null, 2));
-      await renderVideo(job.script, path.join(OUT, id), (message, progress) => Object.assign(job, { message, progress }), { aspect, voice, music });
+      await renderVideo(job.script, path.join(OUT, id), (message, progress) => Object.assign(job, { message, progress }), { aspect, voice, music, musicStart });
       Object.assign(job, { status: 'done', message: 'Done', progress: 1, url: `/video/${id}.mp4` });
       if (ideaId) await updateIdea(ideaId, { status: 'made', video: job.url, title: job.script.title || undefined });
     } catch (e) {
@@ -97,7 +97,8 @@ http.createServer(async (req, res) => {
     if (idea) topic = `${idea.title}. ${idea.hook}`;
     topic ||= 'a mysterious unexplained signal from space';
     return send(res, 200, await startJob(topic.slice(0, 400), body.aspect === 'vertical' ? 'vertical' : 'landscape', idea, VOICES.includes(body.voice) ? body.voice : undefined,
-      ['ambient', 'none', ...(await listMusic())].includes(body.music) ? body.music : 'ambient'));
+      ['ambient', 'none', ...(await listMusic())].includes(body.music) ? body.music : 'ambient',
+      Math.min(Math.max(+body.musicStart || 0, 0), 3600)));
   }
   if (req.method === 'GET' && url.pathname === '/api/status') return send(res, 200, await status());
   if (req.method === 'POST' && url.pathname === '/api/settings') {

@@ -81,6 +81,8 @@ video{width:100%;margin-top:12px;border-radius:12px;background:#000}
   </select>
   <label for="music">Background music</label>
   <select id="music"><option value="ambient">Calm ambient (built-in, free)</option><option value="none">No music</option></select>
+  <label for="musicStart">Start the song at (seconds)</label>
+  <input id="musicStart" type="number" min="0" step="1" value="0" inputmode="numeric">
   <p style="margin:6px 0 0;font-size:.85rem">Add your own: put an mp3 in the <code>music</code> folder of the app and reload.</p>
   <button id="go">Make video</button>
   <div id="bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="fill"></div></div>
@@ -142,7 +144,7 @@ $('topic').oninput=()=>pickedIdea=null;
 $('go').onclick=async()=>{
   $('go').disabled=true;$('out').innerHTML='';
   try{
-    let job=await api('/api/generate',{topic:$('topic').value,aspect:$('aspect').value,voice:$('voice').value,music:$('music').value,ideaId:pickedIdea});
+    let job=await api('/api/generate',{topic:$('topic').value,aspect:$('aspect').value,voice:$('voice').value,music:$('music').value,musicStart:$('musicStart').value,ideaId:pickedIdea});
     renderIdeas(await api('/api/ideas'));
     while(job.status!=='done'&&job.status!=='error'){
       $('fill').style.width=(job.progress*100)+'%';$('bar').setAttribute('aria-valuenow',Math.round(job.progress*100));$('msg').textContent=job.message;

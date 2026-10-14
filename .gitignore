@@ -4,3 +4,5 @@ node_modules/
 /ideas.json
 models/
 videos/
+music/*
+!music/README.txt
