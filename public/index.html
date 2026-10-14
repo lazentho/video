@@ -112,7 +112,7 @@ function renderIdeas(ideas){
   const list=$('ideas');
   if(!ideas.length){list.innerHTML='<li class="empty">No ideas yet. Press "Give me 10 ideas".</li>';return}
   list.innerHTML=[...ideas].reverse().map(i=>`<li>
-    <div class="txt"><b>${esc(i.title)}</b><span class="tag ${i.status==='made'?'made':''}">${i.status==='made'?'✓ made':i.status==='making'?'making…':i.source==='claude'?'full script ready':i.source==='ai'?'AI idea':i.source==='starter'?'starter':'your idea'}</span>
+    <div class="txt"><b>${esc(i.title)}</b><span class="tag ${i.status==='made'?'made':''}">${i.status==='made'?'✓ made':i.status==='making'?'making…':i.source==='claude'?(i.art?'script + art ready':'full script ready'):i.source==='ai'?'AI idea':i.source==='starter'?'starter':'your idea'}</span>
       <div class="hook">${esc(i.hook)}</div>${i.video?`<a href="${esc(i.video)}" target="_blank">Watch</a>`:''}</div>
     <button data-use="${i.id}" aria-label="Use idea: ${esc(i.title)}">Use</button>
     <button class="ghost" data-del="${i.id}" aria-label="Delete idea: ${esc(i.title)}">✕</button></li>`).join('');

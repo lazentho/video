@@ -127,7 +127,8 @@
       }
     ],
     "source": "claude",
-    "status": "new"
+    "status": "new",
+    "art": "library/art/lib-wow"
   },
   {
     "id": "lib-frb",
@@ -252,7 +253,8 @@
       }
     ],
     "source": "claude",
-    "status": "new"
+    "status": "new",
+    "art": "library/art/lib-frb"
   },
   {
     "id": "lib-tabby",

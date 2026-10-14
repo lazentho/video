@@ -71,7 +71,7 @@ async function startJob(topic, aspect, idea, voice) {
     try {
       if (ideaId) await updateIdea(ideaId, { status: 'making' });
       // Ideas from the library already have a full script, so no AI call is needed.
-      job.script = idea?.scenes ? { title: idea.title, style: idea.style, scenes: idea.scenes } : await writeScript(topic);
+      job.script = idea?.scenes ? { title: idea.title, style: idea.style, art: idea.art, scenes: idea.scenes } : await writeScript(topic);
       job.status = 'rendering';
       await fs.promises.mkdir(path.join(OUT, id), { recursive: true });
       await fs.promises.writeFile(path.join(OUT, id, 'script.json'), JSON.stringify({ topic, ...job.script }, null, 2));
