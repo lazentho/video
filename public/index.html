@@ -9,16 +9,56 @@ input,select,button{width:100%;box-sizing:border-box;font-size:1rem;padding:14px
 input,select{margin-bottom:0;background:#10132a;color:inherit}select{margin-top:10px}button{margin-top:10px;background:#5b6cff;border:0;color:#fff;font-weight:600;cursor:pointer}
 button:disabled{opacity:.5}#bar{height:6px;background:#10132a;border-radius:3px;margin-top:18px;overflow:hidden}
 #fill{height:100%;width:0;background:#5b6cff;transition:width .4s}#msg{margin-top:8px;color:#9aa3c7;min-height:1.2em}
+#setup{background:#10132a;border:1px solid #2a3060;border-radius:12px;padding:16px;margin-bottom:18px}
+#setup h2{font-size:1.1rem;margin:0 0 10px}.step{margin:12px 0}.step b{display:block;margin-bottom:4px}
+.ok{color:#7cff6b}.miss{color:#ffb84d}code{background:#07080f;padding:2px 6px;border-radius:6px}
+.link{background:none;border:0;color:#8d99ff;padding:0;width:auto;margin:0 0 14px;text-decoration:underline;cursor:pointer;font-weight:400}
+details{margin-top:12px;color:#9aa3c7}details input{margin-top:6px}
 video{width:100%;margin-top:16px;border-radius:12px;background:#000}a{color:#8d99ff}
 </style></head><body><main>
 <h1>Mystery Video Maker</h1>
-<p>Type a mystery or leave it empty for a surprise. Get a short vertical video.</p>
+<p>Type a mystery or leave it empty for a surprise. Get a short AI video.</p>
+<button class="link" id="openSetup">Setup</button>
+<div id="setup" hidden>
+  <h2>Setup</h2>
+  <div class="step"><b>1. Script AI <span id="stScript"></span></b>
+    Get a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (sign in with Google, click Create API key) and paste it here:
+    <input id="GEMINI_API_KEY" type="password" placeholder="Paste your free Gemini key" autocomplete="off"></div>
+  <div class="step"><b>2. Voice <span id="stVoice"></span></b>
+    <span id="voiceHelp">Open a terminal and run <code>pip install edge-tts</code>, then restart the app.</span></div>
+  <div class="step"><b>3. Images <span id="stImages"></span></b>Free, nothing to do.</div>
+  <details><summary>Paid upgrades (optional)</summary>
+    <input id="ANTHROPIC_API_KEY" type="password" placeholder="Anthropic key (better scripts)" autocomplete="off">
+    <input id="OPENAI_API_KEY" type="password" placeholder="OpenAI key (better images and voice)" autocomplete="off">
+  </details>
+  <button id="save">Save</button>
+</div>
 <input id="topic" placeholder="e.g. The Wow! signal from space">
 <select id="aspect"><option value="landscape">Wide (16:9)</option><option value="vertical">Tall (9:16)</option></select>
 <button id="go">Make video</button>
 <div id="bar"><div id="fill"></div></div><div id="msg"></div><div id="out"></div>
 <script>
 const $=id=>document.getElementById(id);
+const KEYS=['GEMINI_API_KEY','ANTHROPIC_API_KEY','OPENAI_API_KEY'];
+function show(st){
+  const mark=(el,v,miss)=>{$(el).textContent=v?'✓ '+v:miss;$(el).className=v?'ok':'miss'};
+  mark('stScript',st.script,'(needed for your own topics)');
+  mark('stVoice',st.voice,'(not installed)');
+  mark('stImages',st.images,'');
+  $('voiceHelp').hidden=!!st.voice;
+  KEYS.forEach(k=>$(k).placeholder=st.keys[k]?'Saved ✓ (paste to replace)':$(k).placeholder);
+}
+(async()=>{
+  const st=await (await fetch('/api/status')).json();
+  show(st);
+  if(!st.script||!st.voice)$('setup').hidden=false;
+})();
+$('openSetup').onclick=()=>$('setup').hidden=!$('setup').hidden;
+$('save').onclick=async()=>{
+  const body={};KEYS.forEach(k=>{if($(k).value.trim())body[k]=$(k).value.trim();$(k).value=''});
+  const st=await (await fetch('/api/settings',{method:'POST',body:JSON.stringify(body)})).json();
+  show(st);if(st.script&&st.voice)$('setup').hidden=true;
+};
 $('go').onclick=async()=>{
   $('go').disabled=true;$('out').innerHTML='';
   let job=await (await fetch('/api/generate',{method:'POST',body:JSON.stringify({topic:$('topic').value,aspect:$('aspect').value})})).json();
