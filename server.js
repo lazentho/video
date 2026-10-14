@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import { writeScript } from './lib/script.js';
 import { renderVideo } from './lib/render.js';
 import { run } from './lib/util.js';
+import { listMusic } from './lib/music.js';
 import { loadIdeas, visible, generateIdeas, addIdea, updateIdea, deleteIdea } from './lib/ideas.js';
 
 // Tiny .env loader (no dependencies)
@@ -62,7 +63,7 @@ async function readJson(req) {
   return JSON.parse(body || '{}');
 }
 
-async function startJob(topic, aspect, idea, voice) {
+async function startJob(topic, aspect, idea, voice, music) {
   const ideaId = idea?.id;
   const id = crypto.randomBytes(5).toString('hex');
   const job = { id, status: 'writing', message: 'Writing the script', progress: 0.02 };
@@ -75,7 +76,7 @@ async function startJob(topic, aspect, idea, voice) {
       job.status = 'rendering';
       await fs.promises.mkdir(path.join(OUT, id), { recursive: true });
       await fs.promises.writeFile(path.join(OUT, id, 'script.json'), JSON.stringify({ topic, ...job.script }, null, 2));
-      await renderVideo(job.script, path.join(OUT, id), (message, progress) => Object.assign(job, { message, progress }), { aspect, voice });
+      await renderVideo(job.script, path.join(OUT, id), (message, progress) => Object.assign(job, { message, progress }), { aspect, voice, music });
       Object.assign(job, { status: 'done', message: 'Done', progress: 1, url: `/video/${id}.mp4` });
       if (ideaId) await updateIdea(ideaId, { status: 'made', video: job.url, title: job.script.title || undefined });
     } catch (e) {
@@ -95,7 +96,8 @@ http.createServer(async (req, res) => {
     const idea = body.ideaId && (await loadIdeas()).find(i => i.id === body.ideaId);
     if (idea) topic = `${idea.title}. ${idea.hook}`;
     topic ||= 'a mysterious unexplained signal from space';
-    return send(res, 200, await startJob(topic.slice(0, 400), body.aspect === 'vertical' ? 'vertical' : 'landscape', idea, VOICES.includes(body.voice) ? body.voice : undefined));
+    return send(res, 200, await startJob(topic.slice(0, 400), body.aspect === 'vertical' ? 'vertical' : 'landscape', idea, VOICES.includes(body.voice) ? body.voice : undefined,
+      ['ambient', 'none', ...(await listMusic())].includes(body.music) ? body.music : 'ambient'));
   }
   if (req.method === 'GET' && url.pathname === '/api/status') return send(res, 200, await status());
   if (req.method === 'POST' && url.pathname === '/api/settings') {
@@ -103,6 +105,7 @@ http.createServer(async (req, res) => {
     return send(res, 200, await status());
   }
   try {
+    if (url.pathname === '/api/music' && req.method === 'GET') return send(res, 200, await listMusic());
     if (url.pathname === '/api/ideas' && req.method === 'GET') return send(res, 200, visible(await loadIdeas()));
     if (url.pathname === '/api/ideas/generate' && req.method === 'POST') {
       const { count, theme } = await readJson(req);

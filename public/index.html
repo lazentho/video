@@ -79,6 +79,9 @@ video{width:100%;margin-top:12px;border-radius:12px;background:#000}
     <option value="en-US-AvaMultilingualNeural">Ava: warm, natural (online)</option>
     <option value="en-US-EmmaMultilingualNeural">Emma: bright, clear (online)</option>
   </select>
+  <label for="music">Background music</label>
+  <select id="music"><option value="ambient">Calm ambient (built-in, free)</option><option value="none">No music</option></select>
+  <p style="margin:6px 0 0;font-size:.85rem">Add your own: put an mp3 in the <code>music</code> folder of the app and reload.</p>
   <button id="go">Make video</button>
   <div id="bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="fill"></div></div>
   <div id="msg" aria-live="polite"></div><div id="out"></div>
@@ -139,7 +142,7 @@ $('topic').oninput=()=>pickedIdea=null;
 $('go').onclick=async()=>{
   $('go').disabled=true;$('out').innerHTML='';
   try{
-    let job=await api('/api/generate',{topic:$('topic').value,aspect:$('aspect').value,voice:$('voice').value,ideaId:pickedIdea});
+    let job=await api('/api/generate',{topic:$('topic').value,aspect:$('aspect').value,voice:$('voice').value,music:$('music').value,ideaId:pickedIdea});
     renderIdeas(await api('/api/ideas'));
     while(job.status!=='done'&&job.status!=='error'){
       $('fill').style.width=(job.progress*100)+'%';$('bar').setAttribute('aria-valuenow',Math.round(job.progress*100));$('msg').textContent=job.message;
@@ -158,5 +161,6 @@ $('go').onclick=async()=>{
 (async()=>{
   const st=await api('/api/status');showStatus(st);if(!st.script||!st.voice)toggleSetup(true);
   renderIdeas(await api('/api/ideas'));
+  for(const f of await api('/api/music')){const o=document.createElement('option');o.value=f;o.textContent=f;$('music').appendChild(o)}
 })();
 </script></main></body></html>
