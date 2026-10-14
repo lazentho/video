@@ -5,8 +5,8 @@ Usage: python3 tools/kokoro_tts.py <model.onnx> <voices.bin> <voice> <scenes.jso
   <scenes.json> list of narration strings, one per scene
   <words.json>  written: [{"w": word, "scene": i, "start": sec, "end": sec}, ...]
 
-Each sentence (and each part between commas) is spoken separately with a natural pause after it,
-so every phrase starts exactly where we say it does.
+Each sentence is spoken separately with a natural pause after it,
+so every sentence starts exactly where we say it does.
 Inside a sentence, word boundaries are placed by phoneme count and then snapped to the
 quietest moment nearby in the audio, which lines captions up with the voice.
 """
@@ -18,9 +18,9 @@ import numpy as np
 import soundfile as sf
 from kokoro_onnx import Kokoro
 
-SPEED = 0.95         # storyteller pace; the pauses below give it room to breathe
-# Breathing room: pause after a sentence, a question, and a comma (seconds)
-GAP_SENTENCE, GAP_QUESTION, GAP_COMMA = 0.6, 0.75, 0.3
+SPEED = 1.0          # natural pace; the pauses between sentences give it room to breathe
+# Breathing room after a sentence and after a question (seconds)
+GAP_SENTENCE, GAP_QUESTION = 0.55, 0.7
 SNAP = 0.14          # how far a word boundary may move to find a quiet spot, seconds
 
 model, voices, voice, scenes_file, out_wav, out_words = sys.argv[1:7]
@@ -32,14 +32,14 @@ lang = 'en-gb' if voice.startswith('b') else 'en-us'
 scenes = json.load(open(scenes_file, encoding='utf-8'))
 words = [(w, i) for i, text in enumerate(scenes) for w in text.split()]
 
-# Group words into phrases: split at sentence ends and at commas, so the voice breathes
+# Group words into sentences; Kokoro pauses naturally at commas, we add a breath between sentences
 sentences, gaps, cur = [], [], []
 for item in words:
     cur.append(item)
-    end = re.search(r'([.!?,;:])["\')]*$', item[0])
+    end = re.search(r'([.!?])["\')]*$', item[0])
     if end:
         sentences.append(cur)
-        gaps.append(GAP_QUESTION if end.group(1) == '?' else GAP_SENTENCE if end.group(1) in '.!' else GAP_COMMA)
+        gaps.append(GAP_QUESTION if end.group(1) == '?' else GAP_SENTENCE)
         cur = []
 if cur:
     sentences.append(cur)

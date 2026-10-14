@@ -48,7 +48,7 @@ async function status() {
 }
 
 // Free, natural-sounding edge-tts voices offered in the app.
-const VOICES = ['kokoro:am_liam*0.7+am_fenrir*0.3', 'kokoro:am_liam', 'kokoro:am_michael', 'kokoro:am_fenrir', 'kokoro:af_heart', 'en-US-AndrewMultilingualNeural', 'en-US-BrianMultilingualNeural', 'en-US-ChristopherNeural', 'en-US-AvaMultilingualNeural', 'en-US-EmmaMultilingualNeural', 'en-GB-RyanNeural'];
+const VOICES = ['kokoro:am_liam*0.7+am_fenrir*0.3', 'kokoro:am_liam', 'kokoro:am_michael', 'kokoro:am_fenrir', 'kokoro:am_adam', 'kokoro:bm_george', 'kokoro:bm_fable', 'kokoro:af_heart', 'kokoro:af_bella', 'kokoro:am_fenrir', 'kokoro:af_heart', 'en-US-AndrewMultilingualNeural', 'en-US-BrianMultilingualNeural', 'en-US-ChristopherNeural', 'en-US-AvaMultilingualNeural', 'en-US-EmmaMultilingualNeural', 'en-GB-RyanNeural'];
 
 const jobs = new Map();
 const OUT = path.resolve('output');
@@ -96,7 +96,7 @@ http.createServer(async (req, res) => {
     const idea = body.ideaId && (await loadIdeas()).find(i => i.id === body.ideaId);
     if (idea) topic = `${idea.title}. ${idea.hook}`;
     topic ||= 'a mysterious unexplained signal from space';
-    return send(res, 200, await startJob(topic.slice(0, 400), ['vertical', 'landscape'].includes(body.aspect) ? body.aspect : 'classic', idea, VOICES.includes(body.voice) ? body.voice : undefined,
+    return send(res, 200, await startJob(topic.slice(0, 400), ['classic', 'landscape'].includes(body.aspect) ? body.aspect : 'vertical', idea, VOICES.includes(body.voice) ? body.voice : undefined,
       ['ambient', 'none', ...(await listMusic())].includes(body.music) ? body.music : 'ambient',
       Math.min(Math.max(+body.musicStart || 0, 0), 3600)));
   }

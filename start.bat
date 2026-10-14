@@ -24,7 +24,7 @@ for /f "delims=" %%i in ('python -c "import site,os,sys;print(os.path.join(site.
 
 if not exist models\kokoro mkdir models\kokoro
 set "BASE=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0"
-if not exist models\kokoro\kokoro-v1.0.int8.onnx (echo Downloading the voice model, about 90 MB... & curl -L --fail -o models\kokoro\kokoro-v1.0.int8.onnx %BASE%/kokoro-v1.0.int8.onnx)
+if not exist models\kokoro\kokoro-v1.0.onnx (echo Downloading the voice model, about 330 MB... & curl -L --fail -o models\kokoro\kokoro-v1.0.onnx %BASE%/kokoro-v1.0.onnx)
 if not exist models\kokoro\voices-v1.0.bin (echo Downloading voices... & curl -L --fail -o models\kokoro\voices-v1.0.bin %BASE%/voices-v1.0.bin)
 
 echo.

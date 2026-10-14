@@ -30,7 +30,7 @@ if ! python3 -c "import kokoro_onnx, soundfile" >/dev/null 2>&1; then
 fi
 mkdir -p models/kokoro
 base=https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0
-for f in kokoro-v1.0.int8.onnx voices-v1.0.bin; do
+for f in kokoro-v1.0.onnx voices-v1.0.bin; do
   [ -s "models/kokoro/$f" ] || { echo "Downloading $f..."; curl -L --fail -o "models/kokoro/$f" "$base/$f" || rm -f "models/kokoro/$f"; }
 done
 node server.js
