@@ -2,3 +2,5 @@ output/
 node_modules/
 .env
 /ideas.json
+models/
+videos/
