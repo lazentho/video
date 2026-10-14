@@ -6,3 +6,5 @@ models/
 videos/
 music/*
 !music/README.txt
+!music/Lucky Number 3.mp3
+!music/start-times.json

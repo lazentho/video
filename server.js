@@ -106,7 +106,11 @@ http.createServer(async (req, res) => {
     return send(res, 200, await status());
   }
   try {
-    if (url.pathname === '/api/music' && req.method === 'GET') return send(res, 200, await listMusic());
+    if (url.pathname === '/api/music' && req.method === 'GET') {
+      let starts = {};
+      try { starts = JSON.parse(fs.readFileSync('music/start-times.json', 'utf8')); } catch {}
+      return send(res, 200, (await listMusic()).map(name => ({ name, start: +starts[name] || 0 })));
+    }
     if (url.pathname === '/api/ideas' && req.method === 'GET') return send(res, 200, visible(await loadIdeas()));
     if (url.pathname === '/api/ideas/generate' && req.method === 'POST') {
       const { count, theme } = await readJson(req);

@@ -163,8 +163,12 @@ $('go').onclick=async()=>{
 
 // ---- Start ----
 (async()=>{
-  const st=await api('/api/status');showStatus(st);if(!st.script||!st.voice)toggleSetup(true);
   renderIdeas(await api('/api/ideas'));
-  for(const f of await api('/api/music')){const o=document.createElement('option');o.value=f;o.textContent=f;$('music').appendChild(o)}
+  // Your songs; the first one is picked by default, with its saved start time (music/start-times.json)
+  const songs=await api('/api/music');
+  for(const f of songs){const o=document.createElement('option');o.value=f.name;o.textContent=f.name.replace(/\.[^.]+$/,'');o.dataset.start=f.start;$('music').insertBefore(o,$('music').firstChild)}
+  if(songs.length){$('music').selectedIndex=0;$('musicStart').value=songs[songs.length-1].start}
+  $('music').onchange=()=>{$('musicStart').value=$('music').selectedOptions[0].dataset.start||0};
+  const st=await api('/api/status');showStatus(st);if(!st.script||!st.voice)toggleSetup(true);
 })();
 </script></main></body></html>
