@@ -48,7 +48,7 @@ async function status() {
 }
 
 // Free, natural-sounding edge-tts voices offered in the app.
-const VOICES = ['kokoro:am_michael', 'kokoro:am_fenrir', 'kokoro:af_heart', 'en-US-AndrewMultilingualNeural', 'en-US-BrianMultilingualNeural', 'en-US-ChristopherNeural', 'en-US-AvaMultilingualNeural', 'en-US-EmmaMultilingualNeural', 'en-GB-RyanNeural'];
+const VOICES = ['kokoro:am_liam*0.7+am_fenrir*0.3', 'kokoro:am_liam', 'kokoro:am_michael', 'kokoro:am_fenrir', 'kokoro:af_heart', 'en-US-AndrewMultilingualNeural', 'en-US-BrianMultilingualNeural', 'en-US-ChristopherNeural', 'en-US-AvaMultilingualNeural', 'en-US-EmmaMultilingualNeural', 'en-GB-RyanNeural'];
 
 const jobs = new Map();
 const OUT = path.resolve('output');
