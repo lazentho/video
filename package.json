@@ -1,0 +1,8 @@
+{
+  "name": "mystery-video-maker",
+  "version": "0.1.0",
+  "description": "Turn a topic into a short vertical 'things humans don't know yet' video",
+  "type": "module",
+  "scripts": { "start": "node server.js", "test": "node test/smoke.js" },
+  "engines": { "node": ">=20" }
+}
